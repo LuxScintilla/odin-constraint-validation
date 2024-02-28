@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <script defer src="https://kit.fontawesome.com/9393d0e112.js" crossorigin="anonymous"></script>
+
+  <title>Form Constraints Validation</title>
+</head>
+
+<body>
+
+  <main class="main grid-2col">
+
+    <section class="main__content">
+
+      <div class="content__header">
+        <img class="content__logo" src="./img/triangle.png">
+        <h1 class="content__title">KRADUS</h1>
+      </div>
+
+      <div class="content__text-box">
+        <h2 class="cto-title">Don't have an <br> account?</h2>
+        <p class="cto-text">Register to access all the features of our service. <br>
+          Manage your business in one place.
+          It's free!</p>
+      </div>
+
+    </section>
+
+    <div class="main__socials">
+
+      <ul class="social__list">
+        <li class="social__item">
+          <i class="fa-brands fa-facebook-f"></i>
+        </li>
+        <li class="social__item">
+          <i class="fa-brands fa-instagram"></i>
+        </li>
+        <li class="social__item">
+          <i class="fa-brands fa-x-twitter"></i>
+        </li>
+        <li class="social__item">
+          <i class="fa-brands fa-tiktok"></i>
+        </li>
+        <li class="social__item">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </li>
+      </ul>
+
+    </div>
+
+    <section class="main__form">
+      <!-- Username, Email, Country, Postcode, Password, Confirm Password -->
+
+      <h2 class="signup">Sign Up</h2>
+
+      <form class="form" name="register-form" action="#" method="POST" autocomplete="off">
+
+        <div class="form-field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text">
+          <span class="error-span"></span>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email">
+          <span class="error-span"></span>
+        </div>
+
+        <div class="form-field">
+          <label for="country">Country</label>
+          <input id="country" name="country" type="text" list="country-list">
+          <datalist id="country-list">
+            <option value="United Kingdom">
+            <option value="Netherlands">
+            <option value="Germany">
+            <option value="Spain">
+            <option value="Italy">
+          </datalist>
+          <span class="error-span"></span>
+        </div>
+
+        <div class="form-field">
+          <label for="postcode">Postcode</label>
+          <input id="postcode" name="postcode" type="text">
+          <span class="error-span"></span>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password">
+          <span class="error-span"></span>
+        </div>
+
+        <div class="form-field">
+          <label for="password-confirm">Confirm Password</label>
+          <input id="password-confirm" name="password-confirm" type="password">
+          <span class="error-span"></span>
+        </div>
+
+        <div class="form-field--spam">
+          <input id="spam" name="spam" type="checkbox">
+          <label for="spam">I love spam!</label>
+          <span class="error-span"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Sign Up <i class="fa-solid fa-chevron-right"></i></button>
+
+      </form>
+
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

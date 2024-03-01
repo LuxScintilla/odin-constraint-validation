@@ -110,9 +110,18 @@ body {
   margin-bottom: 6.4rem;
 }
 
+.form {
+  font-family: inherit;
+}
+
 .form-field {
+  position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+
+  padding-top: 0.4rem;
 }
 
 .form-field--spam {
@@ -121,8 +130,73 @@ body {
   gap: 1rem;
 }
 
+.form-field > label {
+  margin-bottom: 1rem;
+}
+
+.form-field > input {
+  all: unset;
+  height: 2rem;
+  border-bottom: 1px solid rgba(234, 233, 240, 0.4);
+}
+
+.form-field > select {
+  background-color: rgba(234, 233, 240, 0.1);
+  color: inherit;
+  border: 1px solid rgba(234, 233, 240, 0.4);
+  padding: 0.2rem 0.4rem;
+}
+
+.form-field > select:focus {
+  outline: none;
+}
+
+.form-field > select > option {
+  background-color: #000;
+}
+
+.form-field::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(-110%);
+  transition: transform 0.2s ease-out;
+}
+.form-field:focus-within {
+  /* for the label to inherit */
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+.form-field:focus-within::before {
+  transform: translateX(0);
+}
+
 .error-span {
   display: inline-block;
-  height: 2rem;
+  height: 0.6rem;
   margin-bottom: 2rem;
+}
+
+.submit-btn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 12rem;
+  font-size: 1.8rem;
+  background-color: #d50021;
+  padding: 1rem 2rem;
+  margin-top: 1.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+  background-color: #ff5353;
 }

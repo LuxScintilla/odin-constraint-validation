@@ -107,10 +107,13 @@ body {
 .signup {
   font-size: 3.2rem;
   font-weight: 400;
-  margin-bottom: 6.4rem;
+  margin-bottom: 3.2rem;
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   font-family: inherit;
 }
 
@@ -135,9 +138,30 @@ body {
 }
 
 .form-field > input {
+  position: relative;
   all: unset;
-  height: 2rem;
+  font-size: 1.6rem;
+  padding: 0.2rem 0.2rem;
   border-bottom: 1px solid rgba(234, 233, 240, 0.4);
+}
+
+.form-field > input:invalid {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-right: 4px solid rgb(255, 0, 0);
+}
+
+.fa-circle-check {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: rgb(123, 255, 0);
+  font-size: 1.6rem;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 .form-field > select {
@@ -177,9 +201,10 @@ body {
 }
 
 .error-span {
-  display: inline-block;
-  height: 0.6rem;
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  height: 2.4rem;
+  color: #ffffff;
 }
 
 .submit-btn {
@@ -199,4 +224,8 @@ body {
 .submit-btn:hover,
 .submit-btn:active {
   background-color: #ff5353;
+}
+
+.submit-btn:focus {
+  outline: 1px solid rgba(234, 233, 240, 1);
 }

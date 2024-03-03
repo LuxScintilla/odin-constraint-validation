@@ -17,6 +17,8 @@ const app = {
 
     emailInput.addEventListener("input", app.testEmail);
     emailInput.addEventListener("keypress", app.disableSpaceKey);
+
+    postcodeInput.addEventListener("input", app.testPostcode);
   },
 
   testUserName(e) {
@@ -71,6 +73,42 @@ const app = {
       e.target.parentElement
         .querySelector(".fa-circle-check")
         .classList.add("hidden");
+    }
+  },
+
+  testPostcode(e) {
+    const postcode = e.target;
+    postcode.setCustomValidity("");
+
+    const country = document.getElementById("country");
+
+    switch (country.value) {
+      case "united kingdom":
+        const postcodeRegex = new RegExp(
+          /[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s?[0-9][A-Z]{2}/i
+        );
+        app.postcodeError(6, postcodeRegex, "UK");
+        break;
+    }
+
+    if (postcode.checkValidity()) {
+      e.target.parentElement
+        .querySelector(".fa-circle-check")
+        .classList.remove("hidden");
+    } else {
+      e.target.parentElement
+        .querySelector(".fa-circle-check")
+        .classList.add("hidden");
+    }
+  },
+
+  postcodeError(length, regex, country) {
+    if (
+      postcode.value.length >= length &&
+      regex.test(postcode.value) === false
+    ) {
+      postcode.setCustomValidity(`Enter a valid ${country} postcode`);
+      postcode.reportValidity();
     }
   },
 

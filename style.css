@@ -146,8 +146,7 @@ body {
 }
 
 .form-field > input:invalid {
-  background-color: rgba(255, 0, 0, 0.2);
-  border-right: 4px solid rgb(255, 0, 0);
+  border-bottom: 1px solid rgb(255, 0, 0);
 }
 
 .fa-circle-check {
